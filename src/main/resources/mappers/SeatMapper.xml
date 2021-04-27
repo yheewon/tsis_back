@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsis.heewon.movie.dao.SeatDAO">
+
+	<select id="getReservedSeat" parameterType="String"
+		resultType="String">
+		SELECT seatReservation FROM Reservation WHERE timeMovie = #{timeMovie}
+	</select>
+
+
+	<select id="getTheater" parameterType="Integer"
+		resultType="Movie">
+		SELECT theaterLine, theaterHor, priceMovie FROM Movie WHERE idMovie = #{idMovie};
+	</select>
+
+</mapper>
